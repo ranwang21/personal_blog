@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00476af1-5339-4964-9a57-9fec087293b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/test.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAL/DAL.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DBHelper/connection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/blog.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Comment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAL/DAL.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBHelper/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBHelper/connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blog.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571592720546</updated>
-      <workItem from="1571592721671" duration="3549000" />
+      <workItem from="1571592721671" duration="8132000" />
     </task>
     <servers />
   </component>
