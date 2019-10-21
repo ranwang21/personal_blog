@@ -4,6 +4,7 @@ class post{
     private $title;
     private $date;
     private $body;
+    private $tag_id;
 
     /**
      * post constructor.
@@ -65,6 +66,23 @@ class post{
     {
         $this->body = $body;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTagId()
+    {
+        return $this->tag_id;
+    }
+
+    /**
+     * @param mixed $tag_id
+     */
+    public function setTagId($tag_id)
+    {
+        $this->tag_id = $tag_id;
+    }
+
 
     /**
      * echo out the object to test
