@@ -1,6 +1,5 @@
 <?php
 
-
 class DAL{
     /**
      * -- tested
@@ -85,13 +84,14 @@ class DAL{
         // get PDO object
         $db = connection::getConnection();
         // write sql code
-        $sql = "INSERT INTO posts (title, date, body) VALUES(?, ?, ?)";
+        $sql = "INSERT INTO posts (title, date, body, tag_id) VALUES(?, ?, ?, ?)";
         // prepare statement & execute
         try{
             $results = $db->prepare($sql);
             $results->bindValue(1, $post->getTitle(), PDO::PARAM_STR);
             $results->bindValue(2, $post->getDate(), PDO::PARAM_STR);
             $results->bindValue(3, $post->getBody(), PDO::PARAM_STR);
+            $results->bindValue(4, implode(',', $post->getTagId()), PDO::PARAM_STR);
         }
         catch (Exception $e){
             echo "Error: " . $e->getMessage();
@@ -112,14 +112,15 @@ class DAL{
         // get PDO object
         $db = connection::getConnection();
         // write sql code
-        $sql = "UPDATE posts SET title = ?, date = ?, body = ? WHERE id = ?";
+        $sql = "UPDATE posts SET title = ?, date = ?, body = ?, tag_id=? WHERE id = ?";
         // prepare statement & execute
         try{
             $results = $db->prepare($sql);
             $results->bindValue(1, $post->getTitle(), PDO::PARAM_STR);
             $results->bindValue(2, $post->getDate(), PDO::PARAM_STR);
             $results->bindValue(3, $post->getBody(), PDO::PARAM_STR);
-            $results->bindValue(4, $id, PDO::PARAM_INT);
+            $results->bindValue(4, implode(',', $post->getTagId()), PDO::PARAM_STR);
+            $results->bindValue(5, $id, PDO::PARAM_INT);
         }
         catch (Exception $e){
             echo "Error: " . $e->getMessage();
@@ -252,5 +253,51 @@ class DAL{
         return $results->execute();
     }
 
+    /**
+     * get all existing tags
+     * @return array
+     */
+    public static function get_all_tag()
+    {
+        // get PDO object
+        $db = connection::getConnection();
+        // write sql code
+        $sql = "SELECT * FROM tags";
+        // prepare statement & execute
+        try{
+            $results = $db->prepare($sql);
+            $results->execute();
+        }
+        catch (Exception $e){
+            echo "Error: " . $e->getMessage();
+            exit;
+        }
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * -- tested
+     * get a tag by id
+     * @param $id
+     * @return mixed
+     */
+    public static function get_one_tag($id)
+    {
+        // get PDO object
+        $db = connection::getConnection();
+        // write sql code
+        $sql = "SELECT * FROM tags WHERE id = ?";
+        // prepare statement & execute
+        try{
+            $results = $db->prepare($sql);
+            $results->bindValue(1, $id, PDO::PARAM_INT);
+            $results->execute();
+        }
+        catch (Exception $e){
+            echo "Error: " . $e->getMessage();
+            exit;
+        }
+        return $results->fetch();
+    }
 
 }

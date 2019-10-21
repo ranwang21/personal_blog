@@ -11,12 +11,14 @@ class post{
      * @param $title
      * @param $date
      * @param $body
+     * @param array $tag_id
      */
-    public function __construct($title, $date, $body)
+    public function __construct($title, $date, $body, array $tag_id = null)
     {
         $this->title = $title;
         $this->date = $date;
         $this->body = $body;
+        $this->tag_id = $tag_id;
     }
 
     /**
