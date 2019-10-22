@@ -298,4 +298,27 @@ class DAL{
         return $results->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    /**
+     * Add one tag
+     * @param Tag $tag
+     * @return bool
+     */
+    public static function add_one_tag(Tag $tag)
+    {
+        // get PDO object
+        $db = connection::getConnection();
+        // write sql code
+        $sql = "INSERT INTO tags (name, post_id) VALUES(?, ?)";
+        // prepare statement & execute
+        try{
+            $results = $db->prepare($sql);
+            $results->bindValue(1, $tag->getName(), PDO::PARAM_STR);
+            $results->bindValue(2, $tag->getPostId(), PDO::PARAM_INT);
+        }
+        catch (Exception $e){
+            echo "Error: " . $e->getMessage();
+            exit;
+        }
+        return $results->execute();
+    }
 }

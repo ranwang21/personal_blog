@@ -1,6 +1,7 @@
 <?php
 require '../src/models/Post.php';
 require '../src/models/Comment.php';
+require '../src/models/Tag.php';
 require '../src/DAL/DAL.php';
 
 
@@ -68,6 +69,18 @@ $app->map(['GET', 'POST'], '/new', function($request, $response, $args){
         $args['tags'] = $tags;
         return $this->renderer->render($response, 'new.phtml', $args);
     } else{
-        var_dump($request->getParsedBody());
+        // get post and tags values
+        $post = $request->getParsedBody();
+        var_dump($post);
+        $tags = $post['tags'];
+        // save new tags to database
+        foreach ($tags as $tag){
+            $new_tag = new Tag($tag, $post['id']);
+            DAL::add_one_tag($new_tag);
+        }
+        // save new post to database
+        $new_post = new Post($post['title'], $post['date'], $post['body']);
+        DAL::add_one_post($new_post);
+//        return $response->withRedirect('/');
     }
 });
