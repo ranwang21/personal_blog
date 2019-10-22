@@ -27,6 +27,23 @@ include "header.phtml";
                                         echo $post['body'];
                                     }
                                 ?></p>
+                            <h4>Tags: </h4>
+                            <?php
+                            if(isset($tags)){
+                                foreach ($tags as $tag){
+                                    echo "<label>" .$tag['name']. "</label><input type='checkbox' name='tags' disabled value='" . $tag['name'] . "'";
+                                    if (isset($selected_tags)){
+                                        foreach ($selected_tags as $selected){
+                                            if ($selected['name'] == $tag['name']){
+                                                echo " checked";
+                                            }
+                                        }
+                                    }
+                                    echo " /><br>";
+                                }
+                            }
+                            ?>
+
                             <p><a class="link" href="/edit/<?php
                                     if (isset($post)){
                                         echo $post['id'];
@@ -45,6 +62,7 @@ include "header.phtml";
                         foreach ($comments as $comment){
                             echo "<div class=\"comment\">";
                             echo "<strong>" . $comment['name'] . "</strong>";
+
                             echo "<p>" . $comment['body'] . "</p>";
                             echo "</div>";
                         }

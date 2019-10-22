@@ -4,21 +4,18 @@ class post{
     private $title;
     private $date;
     private $body;
-    private $tag_id;
 
     /**
      * post constructor.
      * @param $title
      * @param $date
      * @param $body
-     * @param array $tag_id
      */
-    public function __construct($title, $date, $body, array $tag_id = null)
+    public function __construct($title, $date, $body)
     {
         $this->title = $title;
         $this->date = $date;
         $this->body = $body;
-        $this->tag_id = $tag_id;
     }
 
     /**
@@ -68,23 +65,6 @@ class post{
     {
         $this->body = $body;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getTagId()
-    {
-        return $this->tag_id;
-    }
-
-    /**
-     * @param mixed $tag_id
-     */
-    public function setTagId($tag_id)
-    {
-        $this->tag_id = $tag_id;
-    }
-
 
     /**
      * echo out the object to test

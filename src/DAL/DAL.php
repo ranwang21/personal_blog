@@ -113,14 +113,13 @@ class DAL{
         // get PDO object
         $db = connection::getConnection();
         // write sql code
-        $sql = "UPDATE posts SET title = ?, date = ?, body = ? WHERE id = ?";
+        $sql = "UPDATE posts SET title = ?, body = ? WHERE id = ?";
         // prepare statement & execute
         try{
             $results = $db->prepare($sql);
             $results->bindValue(1, $post->getTitle(), PDO::PARAM_STR);
-            $results->bindValue(2, $post->getDate(), PDO::PARAM_STR);
-            $results->bindValue(3, $post->getBody(), PDO::PARAM_STR);
-            $results->bindValue(4, $id, PDO::PARAM_INT);
+            $results->bindValue(2, $post->getBody(), PDO::PARAM_STR);
+            $results->bindValue(3, $id, PDO::PARAM_INT);
         }
         catch (Exception $e){
             echo "Error: " . $e->getMessage();
@@ -253,5 +252,50 @@ class DAL{
         return $results->execute();
     }
 
+    /**
+     * get all tags associated to a post
+     * @param $post_id
+     * @return array
+     */
+    public static function get_tags_by_postId($post_id)
+    {
+        // get PDO object
+        $db = connection::getConnection();
+        // write sql code
+        $sql = "SELECT * FROM tags WHERE post_id = ?";
+        // prepare statement & execute
+        try{
+            $results = $db->prepare($sql);
+            $results->bindValue(1, $post_id, PDO::PARAM_INT);
+            $results->execute();
+        }
+        catch (Exception $e){
+            echo "Error: " . $e->getMessage();
+            exit;
+        }
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * get all existing tags
+     * @return array
+     */
+    public static function get_all_unique_name_tags()
+    {
+        // get PDO object
+        $db = connection::getConnection();
+        // write sql code
+        $sql = "SELECT DISTINCT name FROM tags";
+        // prepare statement & execute
+        try{
+            $results = $db->prepare($sql);
+            $results->execute();
+        }
+        catch (Exception $e){
+            echo "Error: " . $e->getMessage();
+            exit;
+        }
+        return $results->fetchAll(PDO::FETCH_ASSOC);
+    }
 
 }
