@@ -1,5 +1,5 @@
 <?php
-
+require '../src/DBHelper/connection.php';
 
 class DAL{
     /**
