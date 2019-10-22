@@ -15,7 +15,21 @@ $app->get('/', function ($request, $response, $args) {
 $app->get('/detail/{id}', function($request, $response, $args){
     // get the post by id
     $post = DAL::get_one_post_by_id($args['id']);
-    // insert the post found into args array
+    // get the comments associated with this post
+    $comments = DAL::get_all_comment_by_post($args['id']);
+    // insert the post and comments found into args array
     $args['post'] = $post;
+    $args['comments'] = $comments;
     return $this->renderer->render($response, 'detail.phtml', $args);
+})->setName('detail');
+
+$app->post('/detail/{id}', function($request, $response, $args){
+    // get the request body
+    $comment = $request->getParsedBody();
+    var_dump($comment);
+    // encapsulation
+    $new_comment = new Comment($comment['name'], $comment['body'], $comment['post_id']);
+    // add comment to database
+    DAL::add_one_comment($new_comment);
+    return $response->withRedirect('/detail/'.$args['id']);
 });

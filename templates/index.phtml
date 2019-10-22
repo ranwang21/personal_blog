@@ -8,7 +8,7 @@ include "header.phtml";
                         if(isset($posts)){
                             foreach ($posts as $post){
                                 echo "<article>";
-                                echo "<h2><a href='detail?id=" . $post['id'] . "'>" . $post['title'] . "</a></h2>";
+                                echo "<h2><a href='detail/" . $post['id'] . "'>" . $post['title'] . "</a></h2>";
                                 echo "<time datetime='" .$post['date']. "'>" . $post['date'] . "</time>";
                                 echo "</article>";
                             }

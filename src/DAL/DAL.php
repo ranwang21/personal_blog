@@ -7,7 +7,8 @@ class DAL{
      * get all posts
      * @return array
      */
-    public static function get_all_post(){
+    public static function get_all_post()
+    {
         // get PDO object
         $db = connection::getConnection();
         // write sql code
