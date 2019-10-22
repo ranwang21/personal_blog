@@ -86,13 +86,14 @@ class DAL{
         // get PDO object
         $db = connection::getConnection();
         // write sql code
-        $sql = "INSERT INTO posts (title, date, body) VALUES(?, ?, ?)";
+        $sql = "INSERT INTO posts (title, date, body, tag_id) VALUES(?, ?, ?, ?)";
         // prepare statement & execute
         try{
             $results = $db->prepare($sql);
             $results->bindValue(1, $post->getTitle(), PDO::PARAM_STR);
             $results->bindValue(2, $post->getDate(), PDO::PARAM_STR);
             $results->bindValue(3, $post->getBody(), PDO::PARAM_STR);
+            $results->bindValue(4, $post->getTagId(), PDO::PARAM_STR);
         }
         catch (Exception $e){
             echo "Error: " . $e->getMessage();
@@ -252,40 +253,17 @@ class DAL{
         return $results->execute();
     }
 
-    /**
-     * get all tags associated to a post
-     * @param $post_id
-     * @return array
-     */
-    public static function get_tags_by_postId($post_id)
-    {
-        // get PDO object
-        $db = connection::getConnection();
-        // write sql code
-        $sql = "SELECT * FROM tags WHERE post_id = ?";
-        // prepare statement & execute
-        try{
-            $results = $db->prepare($sql);
-            $results->bindValue(1, $post_id, PDO::PARAM_INT);
-            $results->execute();
-        }
-        catch (Exception $e){
-            echo "Error: " . $e->getMessage();
-            exit;
-        }
-        return $results->fetchAll(PDO::FETCH_ASSOC);
-    }
 
     /**
-     * get all existing tags
+     * get all tags
      * @return array
      */
-    public static function get_all_unique_name_tags()
+    public static function get_all_tags()
     {
         // get PDO object
         $db = connection::getConnection();
         // write sql code
-        $sql = "SELECT DISTINCT name FROM tags";
+        $sql = "SELECT * FROM tags";
         // prepare statement & execute
         try{
             $results = $db->prepare($sql);
@@ -299,26 +277,26 @@ class DAL{
     }
 
     /**
-     * Add one tag
-     * @param Tag $tag
-     * @return bool
+     * get one tag by its id
+     * @param $tag_id
+     * @return mixed
      */
-    public static function add_one_tag(Tag $tag)
+    public static function get_one_tag_by_id($tag_id)
     {
         // get PDO object
         $db = connection::getConnection();
         // write sql code
-        $sql = "INSERT INTO tags (name, post_id) VALUES(?, ?)";
+        $sql = "SELECT * FROM tags WHERE id = ?";
         // prepare statement & execute
         try{
             $results = $db->prepare($sql);
-            $results->bindValue(1, $tag->getName(), PDO::PARAM_STR);
-            $results->bindValue(2, $tag->getPostId(), PDO::PARAM_INT);
+            $results->bindValue(1, $tag_id, PDO::PARAM_INT);
+            $results->execute();
         }
         catch (Exception $e){
             echo "Error: " . $e->getMessage();
             exit;
         }
-        return $results->execute();
+        return $results->fetch();
     }
 }

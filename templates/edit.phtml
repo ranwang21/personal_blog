@@ -28,6 +28,11 @@ include "header.phtml";
                             echo $post['id'];
                         }
                         ?>" class="button button-secondary">Cancel</a>
+                        <a href="/delete/<?php
+                        if (isset($post)){
+                            echo $post['id'];
+                        }
+                        ?>" class="button button-secondary" onclick="return confirm('Are you sure?')">Delete</a>
                     </form>
                 </div>
             </div>

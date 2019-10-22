@@ -16,7 +16,7 @@ include "header.phtml";
                         <?php
                         if (isset($tags)){
                             foreach ($tags as $tag){
-                                echo "<label>" .$tag['name']. "</label><input type='checkbox' name='tags[]' value='" . $tag['name'] . "' />";
+                                echo "<label>" .$tag['name']. "</label><input type='checkbox' name='tags[]' value='" . $tag['id'] . "' />";
                             }
                         }
                         echo "<br><br>";

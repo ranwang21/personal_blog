@@ -4,6 +4,7 @@ class post{
     private $title;
     private $date;
     private $body;
+    private $tag_id;
 
     /**
      * post constructor.
@@ -11,11 +12,12 @@ class post{
      * @param $date
      * @param $body
      */
-    public function __construct($title, $date, $body)
+    public function __construct($title, $date, $body, $tag_id = null)
     {
         $this->title = $title;
         $this->date = $date;
         $this->body = $body;
+        $this->tag_id = $tag_id;
     }
 
     /**
@@ -64,6 +66,22 @@ class post{
     public function setBody($body)
     {
         $this->body = $body;
+    }
+
+    /**
+     * @return null
+     */
+    public function getTagId()
+    {
+        return $this->tag_id;
+    }
+
+    /**
+     * @param null $tag_id
+     */
+    public function setTagId($tag_id)
+    {
+        $this->tag_id = $tag_id;
     }
 
     /**

@@ -15,12 +15,17 @@ $app->get('/', function ($request, $response, $args) {
 });
 
 $app->get('/detail/{id}', function($request, $response, $args){
-    // get the post by id
+    // get the post by title
     $post = DAL::get_one_post_by_id($args['id']);
-    // get all the existing tags name
-    $tags = DAL::get_all_unique_name_tags();
-    // get all selected tags of the post
-    $selected_tags = DAL::get_tags_by_postId($args['id']);
+    // get all the existing tags
+    $tags = DAL::get_all_tags();
+    // get all the tags associated to the post
+    $selected_tags_arr = explode(',', $post['tag_id']);
+    $selected_tags = [];
+    foreach ($selected_tags_arr as $selected_tag){
+        $selected_tags[] = DAL::get_one_tag_by_id($selected_tag);
+    }
+    var_dump($selected_tags);
     // get the comments associated with this post
     $comments = DAL::get_all_comment_by_post($args['id']);
     // insert the post and comments found into args array
@@ -29,7 +34,7 @@ $app->get('/detail/{id}', function($request, $response, $args){
     $args['selected_tags'] = $selected_tags;
     $args['comments'] = $comments;
     return $this->renderer->render($response, 'detail.phtml', $args);
-})->setName('detail');
+});
 
 $app->post('/detail/{id}', function($request, $response, $args){
     // get the request body
@@ -64,23 +69,29 @@ $app->map(['GET', 'POST'], '/edit/{id}', function($request, $response, $args){
 $app->map(['GET', 'POST'], '/new', function($request, $response, $args){
     if($request->getMethod() == 'GET'){
         // get all existing tags to select
-        $tags = DAL::get_all_unique_name_tags();
+        $tags = DAL::get_all_tags();
         // insert tags into $args
         $args['tags'] = $tags;
+        // redirect to index page
         return $this->renderer->render($response, 'new.phtml', $args);
     } else{
         // get post and tags values
         $post = $request->getParsedBody();
-        var_dump($post);
         $tags = $post['tags'];
-        // save new tags to database
-        foreach ($tags as $tag){
-            $new_tag = new Tag($tag, $post['id']);
-            DAL::add_one_tag($new_tag);
-        }
+        // form tags as string
+        $tags = implode(',',$tags);
+        // encapsulation
+        $new_post = new Post($post['title'], $post['date'], $post['body'], $tags);
         // save new post to database
-        $new_post = new Post($post['title'], $post['date'], $post['body']);
         DAL::add_one_post($new_post);
-//        return $response->withRedirect('/');
+        // redirect to index page
+        return $response->withRedirect('/'.$args['id']);
     }
+});
+
+$app->get('/delete/{id}', function ($request, $response, $args){
+    // delete the post
+    DAL::delete_one_post($args['id']);
+    // redirect
+    return $response->withRedirect('/');
 });
