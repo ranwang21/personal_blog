@@ -1,29 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="00476af1-5339-4964-9a57-9fec087293b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/detail.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/footer.phtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/header.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/personal_blog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/personal_blog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/edit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/password.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAL/DAL.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAL/DAL.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/blog.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/blog.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Post.php" afterDir="false" />
     </list>
-=======
-    <list default="true" id="00476af1-5339-4964-9a57-9fec087293b9" name="Default Changelist" comment="" />
->>>>>>> 0aef26730ecc8f2bfeba8938b077e6427e12b4fa
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,15 +48,12 @@
       <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
       <path value="$PROJECT_DIR$/vendor/slim/slim" />
       <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/twig/twig" />
     </include_path>
   </component>
   <component name="ProjectId" id="1STftVLUyadajxNum4hMxkNUNeH" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -80,18 +61,12 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wangr\Desktop\web\projects\PHP\personal_blog\templates" />
       <recent name="C:\Users\wangr\Desktop\web\projects\PHP\personal_blog\src\DBHelper" />
       <recent name="C:\Users\wangr\Desktop\web\projects\PHP\personal_blog\src\models" />
       <recent name="C:\Users\wangr\Desktop\web\projects\PHP\personal_blog\src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\wangr\Desktop\web\projects\PHP\personal_blog\public" />
-      <recent name="C:\Users\wangr\Desktop\web\projects\PHP\personal_blog\templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -118,13 +93,6 @@
       <updated>1571592720546</updated>
       <workItem from="1571592721671" duration="8132000" />
       <workItem from="1571652855646" duration="4848000" />
-<<<<<<< HEAD
-      <workItem from="1571700819989" duration="4921000" />
-      <workItem from="1571751878056" duration="4797000" />
-=======
-      <workItem from="1571660455252" duration="1618000" />
-      <workItem from="1571667794279" duration="2898000" />
->>>>>>> 0aef26730ecc8f2bfeba8938b077e6427e12b4fa
     </task>
     <servers />
   </component>

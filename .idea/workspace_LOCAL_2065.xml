@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="00476af1-5339-4964-9a57-9fec087293b9" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/templates/detail.phtml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/templates/footer.phtml" afterDir="false" />
@@ -21,9 +20,6 @@
       <change beforePath="$PROJECT_DIR$/src/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.phtml" afterDir="false" />
     </list>
-=======
-    <list default="true" id="00476af1-5339-4964-9a57-9fec087293b9" name="Default Changelist" comment="" />
->>>>>>> 0aef26730ecc8f2bfeba8938b077e6427e12b4fa
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +76,6 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -118,13 +113,8 @@
       <updated>1571592720546</updated>
       <workItem from="1571592721671" duration="8132000" />
       <workItem from="1571652855646" duration="4848000" />
-<<<<<<< HEAD
       <workItem from="1571700819989" duration="4921000" />
       <workItem from="1571751878056" duration="4797000" />
-=======
-      <workItem from="1571660455252" duration="1618000" />
-      <workItem from="1571667794279" duration="2898000" />
->>>>>>> 0aef26730ecc8f2bfeba8938b077e6427e12b4fa
     </task>
     <servers />
   </component>
