@@ -17,6 +17,6 @@
         "slim/php-view": "^2.0",
         "monolog/monolog": "^1.17",
       "ext-pdo": "*",
-        "twig/twig": "^2.0"
+        "twig/twig": "^3.11"
     }
 }
